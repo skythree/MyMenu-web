@@ -1,0 +1,20 @@
+﻿<link href="~/Content/bootstrap.css" rel="stylesheet" />
+@model MvcMyMenu.Models.Menu[]
+@{
+    ViewBag.Title = "Browse";
+}
+
+
+
+    <h3>Меню:</h3>
+
+ <ul>
+        @foreach (var menu in Model)
+        {
+            <li>
+                @Html.ActionLink(menu.Name, "Details", new { id = menu.Id})
+            </li>
+        }
+     <img src="~/Image/12.jpg" class="img-thumbnail" height="500px" width="500px"/>
+    </ul>
+

@@ -1,0 +1,25 @@
+﻿<link href="~/Content/bootstrap.css" rel="stylesheet" />
+@model MvcMyMenu.Models.Products[]
+@{
+    ViewBag.Title = "MyMenu";
+}
+
+
+
+
+<table class="table table-hover">
+    <thead>       
+        <tbody>
+            @foreach (var product in Model)
+            {                
+                <tr>
+                    <td>@product.Category.Name</td>
+                    <td>@product.Name</td>
+                    <td>@product.full_description</td>
+                    <td>@product.short_description</td>
+                    <td>@product.Price</td>
+                </tr>
+            }
+        </tbody>
+    </thead>
+</table>

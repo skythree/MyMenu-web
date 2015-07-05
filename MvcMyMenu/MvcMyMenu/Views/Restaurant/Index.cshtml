@@ -1,0 +1,26 @@
+﻿<link href="~/Content/bootstrap.css" rel="stylesheet" />
+@model MvcMyMenu.Models.Places[]
+@{
+    ViewBag.Title = "Places";
+}
+
+<h2>Ресторанти</h2>
+
+<ul>
+    @foreach (var place in Model)
+    {
+        <li>@Html.ActionLink(place.Name, "Browse", new
+            {
+                place = place.Name
+
+            })
+            
+                <blockquote class="blockquote-reverse"> @place.Info </blockquote>        
+            
+        </li>
+    }
+   
+        <img src="~/Image/p1450283.jpg" class="thumbnail" height="500px" width="500px"/>
+</ul>   
+   
+

@@ -1,0 +1,113 @@
+﻿@{
+    Layout = "~/Views/Shared/_BootstrapLayout.basic.cshtml";
+}
+
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+
+<meta charset="UTF-8"/>
+
+<title></title>
+
+<meta name="description" content="Onepage Multipurpose Bootstrap HTML Template">
+
+<meta name="author" content="">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/font-awesome.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/theme.css">
+
+<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+<!--wrapper start-->
+<div class="wrapper" id="wrapper">
+	
+	<!--header-->
+	<header>
+	<div class="banner row" id="banner">		
+		<div class="parallax text-center" style="background-image: url(http://wowthemes.net/demo/leroy/img/dummy1.jpg);">
+			<div class="parallax-pattern-overlay">
+				<div class="container text-center" style="height:580px;padding-top:170px;">
+					<a href="#"><img id="site-title" class=" wow fadeInDown" wow-data-delay="0.0s" wow-data-duration="0.9s"/></a>
+					<h2 class="intro wow zoomIn" wow-data-delay="0.4s" wow-data-duration="0.9s"></h2>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<div class="menu">
+		<div class="navbar-wrapper">
+			<div class="container">
+				<div class="navwrapper">
+					<div class="navbar navbar-inverse navbar-static-top">
+						<div class="container">
+							<div class="navArea">
+								<div class="navbar-collapse collapse">
+									<ul class="nav navbar-nav">
+										<li class="menuItem active"><a href="http://localhost:1589/Home">Home</a></li>
+										<li class="menuItem"><a href="http://localhost:1589/Restaurant">Restaurants</a></li>									
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+	</header>
+		
+	
+
+<!--Javascripts-->
+<script src="js/jquery.js"></script>
+<script src="js/modernizr.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/menustick.js"></script>
+<script src="js/parallax.js"></script>
+<script src="js/easing.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/masonry.js"></script>
+<script src="js/imgloaded.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/colorfinder.js"></script>
+<script src="js/gridscroll.js"></script>
+<script src="js/contact.js"></script>
+<script src="js/common.js"></script>
+
+<script type="text/javascript">
+jQuery(function($) {
+$(document).ready( function() {
+  //enabling stickUp on the '.navbar-wrapper' class
+	$('.navbar-wrapper').stickUp({
+		parts: {
+		  0: 'banner',
+		  1: 'aboutus',
+		  2: 'specialties',
+		  3: 'gallery',
+		  4: 'feedback',
+		  5: 'contact'
+		},
+		itemClass: 'menuItem',
+		itemHover: 'active',
+		topMargin: 'auto'
+		});
+	});
+});
+</script>
+</body>
+</html>

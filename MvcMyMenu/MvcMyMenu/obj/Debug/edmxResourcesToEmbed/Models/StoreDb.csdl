@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MvcMyMenu.Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MyMenuEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="MvcMyMenu.Model.C__MigrationHistory" />
+    <EntitySet Name="Menus" EntityType="MvcMyMenu.Model.Menu" />
+    <EntitySet Name="Restaurants" EntityType="MvcMyMenu.Model.Restaurant" />
+    <AssociationSet Name="FK_dbo_Menus_dbo_Restaurants_RestaurantId" Association="MvcMyMenu.Model.FK_dbo_Menus_dbo_Restaurants_RestaurantId">
+      <End Role="Restaurants" EntitySet="Restaurants" />
+      <End Role="Menus" EntitySet="Menus" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="ContextKey" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
+    <Property Name="Model" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="MenuId" />
+    </Key>
+    <Property Name="MenuId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="RestaurantId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Restaurant" Relationship="MvcMyMenu.Model.FK_dbo_Menus_dbo_Restaurants_RestaurantId" FromRole="Menus" ToRole="Restaurants" />
+  </EntityType>
+  <EntityType Name="Restaurant">
+    <Key>
+      <PropertyRef Name="RestaurantId" />
+    </Key>
+    <Property Name="RestaurantId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Menus" Relationship="MvcMyMenu.Model.FK_dbo_Menus_dbo_Restaurants_RestaurantId" FromRole="Restaurants" ToRole="Menus" />
+  </EntityType>
+  <Association Name="FK_dbo_Menus_dbo_Restaurants_RestaurantId">
+    <End Role="Restaurants" Type="MvcMyMenu.Model.Restaurant" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Menus" Type="MvcMyMenu.Model.Menu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restaurants">
+        <PropertyRef Name="RestaurantId" />
+      </Principal>
+      <Dependent Role="Menus">
+        <PropertyRef Name="RestaurantId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
